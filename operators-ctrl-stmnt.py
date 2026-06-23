@@ -1,36 +1,86 @@
-# Comparison Operators
+# Working with Operators and Control Statements in Python
 
-def compare_numbers(a, b):
-    if a > b:
-        print(f"{a} is larger")
-    elif a < b:
-        print(f"{b} is larger")
+# 1. Function to compare two numbers
+def compare_numbers(num1, num2):
+    if num1 > num2:
+        print(f"{num1} is larger than {num2}")
+    elif num2 > num1:
+        print(f"{num2} is larger than {num1}")
     else:
         print("Both numbers are equal")
 
-compare_numbers(10, 20)
 
-# Logical Operators
+# 2. Logical Operators
 
-num = 15
+def check_number_range(number):
+    if number >= 10 and number <= 20:
+        print(f"{number} is within the range 10 to 20")
+    else:
+        print(f"{number} is outside the range 10 to 20")
 
-if num >= 10 and num <= 20:
-    print("Number is within range")
 
-text = "Python"
+def check_string(text):
+    if text != "" and len(text) > 5:
+        print("String is not empty and length is greater than 5")
+    else:
+        print("Condition not satisfied")
 
-if text != "" and len(text) > 5:
-    print("Valid string")
 
-# Conditional Statements
+# 3. Simple Calculator
 
-age = 18
+def calculator(num1, num2, operation):
+    if operation == "+":
+        print("Result:", num1 + num2)
+    elif operation == "-":
+        print("Result:", num1 - num2)
+    elif operation == "*":
+        print("Result:", num1 * num2)
+    elif operation == "/":
+        if num2 != 0:
+            print("Result:", num1 / num2)
+        else:
+            print("Cannot divide by zero")
+    else:
+        print("Invalid operation")
 
-if age < 13:
-    print("Child")
-elif age < 20:
-    print("Teenager")
-elif age < 60:
-    print("Adult")
-else:
-    print("Senior")
+
+# 4. Age Classification
+
+def classify_age(age):
+    if age < 13:
+        print("Category: Child")
+    elif age < 20:
+        print("Category: Teenager")
+    elif age < 60:
+        print("Category: Adult")
+    else:
+        print("Category: Senior")
+
+
+# 5. Simple Login System
+
+def login_system(username, password):
+    valid_username = "admin"
+    valid_password = "12345"
+
+    if username == valid_username and password == valid_password:
+        print("Login Successful")
+    else:
+        print("Invalid Username or Password")
+
+
+# ----------------------------
+# Function Calls (Testing)
+# ----------------------------
+
+compare_numbers(15, 25)
+
+check_number_range(15)
+
+check_string("Python")
+
+calculator(20, 10, "+")
+
+classify_age(18)
+
+login_system("admin", "12345")
