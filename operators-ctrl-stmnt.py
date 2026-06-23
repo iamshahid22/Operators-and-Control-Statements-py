@@ -1,66 +1,90 @@
-# Task 1: Compare Two Integers
-def compare_integers(a, b):
-    print("--- Task 1 ---")
-    if a > b:
-        print(f"{a} is larger than {b}")
-    elif b > a:
-        print(f"{b} is larger than {a}")
+# 1. Comparison Operators - Find Larger Number
+
+def find_larger(num1, num2):
+    if num1 > num2:
+        print(f"{num1} is larger than {num2}")
+    elif num2 > num1:
+        print(f"{num2} is larger than {num1}")
     else:
-        print(f"{a} and {b} are equal")
+        print("Both numbers are equal")
 
-# Task 2: Logical Operators
-def evaluate_conditions(num, text):
-    print("\n--- Task 2 ---")
-    is_in_range = 10 <= num <= 20
-    print(f"Is {num} between 10 and 20? {is_in_range}")
-    is_valid_string = len(text) > 0 and len(text) > 5
-    print(f"Is string '{text}' valid? {is_valid_string}")
 
-# Task 3: Simple Calculator
-def calculator(op, num1, num2):
-    print("\n--- Task 3 ---")
-    if op == '+':
-        print(f"Result: {num1 + num2}")
-    elif op == '-':
-        print(f"Result: {num1 - num2}")
-    elif op == '*':
-        print(f"Result: {num1 * num2}")
-    elif op == '/':
-        if num2 != 0:
-            print(f"Result: {num1 / num2}")
-        else:
-            print("Error: Division by zero")
+# Example
+find_larger(15, 25)
+
+
+# 2. Logical Operators
+
+# Check if a number is within the range 10 to 20
+number = 15
+
+if number >= 10 and number <= 20:
+    print(f"{number} is within the range 10 to 20")
+else:
+    print(f"{number} is not within the range 10 to 20")
+
+
+# Check if a string is not empty and length is greater than 5
+text = "Python"
+
+if text and len(text) > 5:
+    print("String is not empty and length is greater than 5")
+else:
+    print("Condition not satisfied")
+
+
+# 3. Simple Calculator using Conditional Statements
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operator = input("Enter operation (+, -, *, /): ")
+
+if operator == "+":
+    print("Result =", num1 + num2)
+
+elif operator == "-":
+    print("Result =", num1 - num2)
+
+elif operator == "*":
+    print("Result =", num1 * num2)
+
+elif operator == "/":
+    if num2 != 0:
+        print("Result =", num1 / num2)
     else:
-        print("Invalid operator")
+        print("Division by zero is not allowed")
 
-# Task 4: Age Classification
-def classify_age(age):
-    print("\n--- Task 4 ---")
-    if age < 0:
-        print("Invalid age")
-    elif age < 13:
-        print("Category: Child")
-    elif age < 20:
-        print("Category: Teenager")
-    elif age < 65:
-        print("Category: Adult")
-    else:
-        print("Category: Senior")
+else:
+    print("Invalid operator")
 
-# Task 5: Login System
-def login(username, password):
-    print("\n--- Task 5 ---")
-    stored_user = "admin"
-    stored_pass = "secure123"
-    if username == stored_user and password == stored_pass:
-        print("Login successful!")
-    else:
-        print("Invalid username or password.")
 
-# Execution
-if __name__ == "__main__":
-    compare_integers(15, 10)
-    evaluate_conditions(15, "HelloPython")
-    calculator('+', 10, 5)
-    classify_age(25)
-    login("admin", "secure123")
+# 4. Age Classification
+
+age = int(input("Enter your age: "))
+
+if age < 13:
+    print("Category: Child")
+
+elif age < 20:
+    print("Category: Teenager")
+
+elif age < 60:
+    print("Category: Adult")
+
+else:
+    print("Category: Senior")
+
+
+# 5. Simple Login System
+
+correct_username = "admin"
+correct_password = "12345"
+
+username = input("Enter username: ")
+password = input("Enter password: ")
+
+if username == correct_username and password == correct_password:
+    print("Login Successful")
+
+else:
+    print("Invalid Username or Password")
