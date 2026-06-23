@@ -1,90 +1,68 @@
-# 1. Comparison Operators - Find Larger Number
+# Operators (Comparison and Logical) and Control Statements
 
-def find_larger(num1, num2):
-    if num1 > num2:
-        print(f"{num1} is larger than {num2}")
-    elif num2 > num1:
-        print(f"{num2} is larger than {num1}")
-    else:
-        print("Both numbers are equal")
+# Comparison Operators
+a = 15
+b = 25
 
-
-# Example
-find_larger(15, 25)
-
-
-# 2. Logical Operators
-
-# Check if a number is within the range 10 to 20
-number = 15
-
-if number >= 10 and number <= 20:
-    print(f"{number} is within the range 10 to 20")
+if a > b:
+    print(a, "is larger")
+elif b > a:
+    print(b, "is larger")
 else:
-    print(f"{number} is not within the range 10 to 20")
+    print("Both numbers are equal")
 
+# Logical Operators
+num = 15
 
-# Check if a string is not empty and length is greater than 5
+if num >= 10 and num <= 20:
+    print("Number is within the range 10 to 20")
+else:
+    print("Number is outside the range")
+
 text = "Python"
 
-if text and len(text) > 5:
+if text != "" and len(text) > 5:
     print("String is not empty and length is greater than 5")
 else:
     print("Condition not satisfied")
 
+# Conditional Statements - Calculator
+num1 = 20
+num2 = 10
+operation = "+"
 
-# 3. Simple Calculator using Conditional Statements
-
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-operator = input("Enter operation (+, -, *, /): ")
-
-if operator == "+":
-    print("Result =", num1 + num2)
-
-elif operator == "-":
-    print("Result =", num1 - num2)
-
-elif operator == "*":
-    print("Result =", num1 * num2)
-
-elif operator == "/":
+if operation == "+":
+    print("Addition:", num1 + num2)
+elif operation == "-":
+    print("Subtraction:", num1 - num2)
+elif operation == "*":
+    print("Multiplication:", num1 * num2)
+elif operation == "/":
     if num2 != 0:
-        print("Result =", num1 / num2)
+        print("Division:", num1 / num2)
     else:
-        print("Division by zero is not allowed")
+        print("Cannot divide by zero")
 
-else:
-    print("Invalid operator")
-
-
-# 4. Age Classification
-
-age = int(input("Enter your age: "))
+# Age Classification
+age = 18
 
 if age < 13:
-    print("Category: Child")
-
+    print("Child")
 elif age < 20:
-    print("Category: Teenager")
-
+    print("Teenager")
 elif age < 60:
-    print("Category: Adult")
-
+    print("Adult")
 else:
-    print("Category: Senior")
+    print("Senior")
 
+# Login System
+username = "admin"
+password = "12345"
 
-# 5. Simple Login System
+entered_username = "admin"
+entered_password = "12345"
 
-correct_username = "admin"
-correct_password = "12345"
-
-username = input("Enter username: ")
-password = input("Enter password: ")
-
-if username == correct_username and password == correct_password:
+if entered_username == username and entered_password == password:
     print("Login Successful")
-
 else:
-    print("Invalid Username or Password")
+    print("Invalid Credentials")
